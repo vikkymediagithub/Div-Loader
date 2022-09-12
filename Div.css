@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(12, 12, 11);
+}
+
+div{
+    width: 16vmax; 
+    height: 16vmax; 
+    border-right: 4px solid rgba(300,0,150); 
+    border-radius: 100%; 
+    -webkit-animation: spinRight 800ms linear infinite;
+} 
+
+div:before, div:after {
+    content: ''; 
+    width: 12vmax; 
+    height: 12vmax;
+    display: block; 
+    position: absolute; 
+    top: calc(50% - 6vmax); 
+    left: calc(50% - 6vmax); 
+    border-left: 3px solid rgba(300,0,150); 
+    border-radius: 100%; 
+    -webkit-animation: spinLeft 800ms linear infinite; 
+}
+
+div:after { 
+    width: 8vmax; 
+    height: 8vmax; 
+    top: calc(50% - 4vmax); 
+    left: calc(50% - 4vmax); 
+    border: 0; 
+    border-right: 2px solid rgba(300,0,150); 
+    -webkit-animation: none; 
+} 
+
+@keyframes spinLeft { 
+    from {-webkit-transform:rotate(0deg);} 
+    to {-webkit-transform:rotate(720deg);} 
+} 
+
+@keyframes spinRight { 
+    from {-webkit-transform:rotate(360deg);} 
+    to {-webkit-transform:rotate(0deg);} 
+}
